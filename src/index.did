@@ -1,0 +1,10 @@
+service: () -> {
+    borrowBook: (text, text) -> (variant {Ok:record {id:text; name:text; createdAt:nat64; dipinjam:bool}; Err:variant {booksDoesNotExist:text; UserDoesNotExist:text}});
+    createBook: (text) -> (record {id:text; name:text; createdAt:nat64; dipinjam:bool});
+    createUser: (text) -> (record {id:text; sessionIds:vec principal; name:text; createdAt:nat64; bukuDipinjam:vec text});
+    getAllBook: () -> (vec record {id:text; name:text; createdAt:nat64; dipinjam:bool}) query;
+    getAllUsers: () -> (vec record {id:text; sessionIds:vec principal; name:text; createdAt:nat64; bukuDipinjam:vec text}) query;
+    getBookById: (text) -> (variant {Ok:record {id:text; name:text; createdAt:nat64; dipinjam:bool}; Err:variant {booksDoesNotExist:text; UserDoesNotExist:text}}) query;
+    getUserById: (text) -> (variant {Ok:record {id:text; sessionIds:vec principal; name:text; createdAt:nat64; bukuDipinjam:vec text}; Err:variant {booksDoesNotExist:text; UserDoesNotExist:text}}) query;
+    returnBook: (text, text) -> (variant {Ok:record {id:text; name:text; createdAt:nat64; dipinjam:bool}; Err:variant {booksDoesNotExist:text; UserDoesNotExist:text}});
+}
