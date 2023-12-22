@@ -2,12 +2,11 @@
     "canisters": {
         "perpustakaan": {
             "type": "custom",
-            "main": "src/index.ts",
-            "candid": "src/index.did",
             "build": "npx azle perpustakaan",
-            "wasm": ".azle/perpustakaan/perpustakaan.wasm",
-            "gzip": true
+            "root": "src",
+            "ts": "src/index.ts",
+            "candid": "src/index.did",
+            "wasm": ".azle/perpustakaan/perpustakaan.wasm.gz"
         }
     }
 }
-
